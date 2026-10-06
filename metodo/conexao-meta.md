@@ -15,7 +15,7 @@ A Meta separa dois níveis de acesso pra um aplicativo:
 
 Consequência prática: o aplicativo, o usuário do sistema e a conta de anúncios precisam estar **na mesma BM**. Ou seja, tudo é criado **dentro da BM do cliente**, uma vez por cliente.
 
-O caminho que parece mais simples (um aplicativo só na BM da agência, recebendo as contas dos clientes por parceria) é justamente o que pede acesso avançado. Sem ele, pode funcionar por um tempo e ser bloqueado depois. Não usa esse caminho, a menos que o gestor diga que o aplicativo dele já tem acesso avançado aprovado (ver o fim deste arquivo).
+Um aplicativo só na BM da agência, recebendo as contas dos clientes por parceria, parece mais simples, mas é justamente o que pede acesso avançado. Sem ele, pode funcionar por um tempo e ser bloqueado depois. Este kit não usa esse caminho: é sempre um aplicativo, um usuário do sistema e um token por BM de cliente.
 
 Explica isso ao gestor em poucas linhas antes de começar.
 
@@ -125,14 +125,3 @@ No acesso padrão o limite é baixo: na casa de algumas centenas de chamadas por
 ## Cliente seguinte
 
 Repete os passos 1 a 7 na BM do próximo cliente, com outro nome de token. Com a prática leva poucos minutos.
-
-## Caminho alternativo: um aplicativo só, na BM da agência
-
-Só vale se o aplicativo do gestor **já tem acesso avançado aprovado** pela Meta pra `ads_management` e `ads_read`, com a empresa verificada. Nesse caso:
-
-1. aplicativo e usuário do sistema ficam na BM da agência;
-2. a BM do cliente adiciona a BM da agência como parceira e compartilha a conta de anúncios (e página, Instagram e pixel, se for subir anúncio);
-3. na BM da agência, a conta compartilhada é atribuída ao usuário do sistema;
-4. um token só atende todos os clientes, gravado como `META_TOKEN`.
-
-Se o gestor não sabe dizer se tem acesso avançado, ele não tem. Segue o caminho principal.
